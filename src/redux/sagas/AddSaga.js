@@ -11,7 +11,6 @@ import {
   GET_DATA_SUCCESS,
   UPDATE_DATA_ERROR,
   UPDATE_DATA_REQUEST,
-  UPDATE_DATA_SUCCESS,
   VIEW_DATA_ERROR,
   VIEW_DATA_REQUEST,
   VIEW_DATA_SUCCESS,
@@ -147,6 +146,7 @@ function* updateData(id) {
   }
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   function* watcher() {
     yield takeLatest(ADD_DATA_REQUEST, addData);

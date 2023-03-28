@@ -6,8 +6,6 @@ import {
 } from "../constants/UserConstants";
 import "firebase/auth";
 import firebase from "../../firebase";
-import { db } from "../../firebase";
-import { Navigate } from "react-router-dom";
 
 function getUser(id) {
   return firebase
@@ -78,6 +76,7 @@ function* loginUser(data) {
   }
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   function* watcher() {
     yield takeLatest(LOGIN_REQUEST, loginUser);

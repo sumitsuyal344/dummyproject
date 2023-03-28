@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { connect,  } from "react-redux";
 import {
   addData,
   getData,
-  deleteData,
+  // deleteData,
   viewData,
   updateData,
 } from "./redux/actions/DataAction";
-import {  Icon, Item } from "semantic-ui-react";
+
 import NavBar from "./components/Navbar";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
@@ -17,11 +17,11 @@ function App(props) {
   const {
     getData,
     addData,
-    deleteData,
+    // deleteData,
     dataList,
-    viewData,
+    // viewData,
     viewSingleData,
-    updateData,
+    // updateData,
   } = props;
   const [name, setName] = useState();
   const [address, setAddress] = useState();
@@ -48,11 +48,11 @@ function App(props) {
 
   console.log("dataList1", dataList);
 
-  const deleteCategory = (id) => {
-    console.log(id);
-    // dispatch(deleteData(id));
-    deleteData(id);
-  };
+  // const deleteCategory = (id) => {
+  //   console.log(id);
+  //   // dispatch(deleteData(id));
+  //   deleteData(id);
+  // };
 
   const handlechange = (e) => {
     console.log(e.target.value)
