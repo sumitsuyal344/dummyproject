@@ -74,7 +74,7 @@ const handleLogin=()=>{
               </a>
               <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                 Don't have an account?{" "}
-                <a href="/Register" style={{ color: "#393f81" }} onClick={navigate("/")} >
+                <a href="/Register" style={{ color: "#393f81" }} >
                   Register here
                 </a>
               </p>
