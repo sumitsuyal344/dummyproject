@@ -8,6 +8,9 @@ import {
   VIEW_DATA_ERROR,
   VIEW_DATA_REQUEST,
   VIEW_DATA_SUCCESS,
+  UPDATE_DATA_REQUEST,
+  UPDATE_DATA_SUCCESS,
+  UPDATE_DATA_ERROR
 } from "../constants/DataConstants";
 
 const initialState = {
@@ -70,6 +73,21 @@ const category = (state = initialState, action) => {
         loading: false,
         error: action.err,
       };
+      case UPDATE_DATA_REQUEST:
+        return {
+          ...state,
+          loading: true,
+        };
+      case UPDATE_DATA_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+        };
+      case UPDATE_DATA_ERROR:
+        return {
+          loading: false,
+          error: action.err,
+        };
     default:
       return state;
   }

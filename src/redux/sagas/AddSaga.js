@@ -11,6 +11,7 @@ import {
   GET_DATA_SUCCESS,
   UPDATE_DATA_ERROR,
   UPDATE_DATA_REQUEST,
+  UPDATE_DATA_SUCCESS,
   VIEW_DATA_ERROR,
   VIEW_DATA_REQUEST,
   VIEW_DATA_SUCCESS,
@@ -120,26 +121,32 @@ function* viewData(id) {
   }
 }
 
-function updateDb(id, obj) {
-  console.log("sagaId", id, obj);
+function updateDb(obj) {
+  console.log("sagaIdUpdate",  obj);
+  let {name,address,id}=obj.obj;
+  let data={
+    name:name,
+    address:address
+  }
+  console.log("updateid",id,data)
   return firebase
     .firestore()
-    .collection("webData")
+    .collection("users")
     .doc(id)
-    .update(obj)
+    .update(data)
     .then((response) => response);
 }
 
-function* updateData(id) {
-  console.log("sagaId", id);
+function* updateData(obj) {
+  console.log("sagaId", obj);
   try {
-    let obj = {};
-    setValue(id.data, obj);
-    console.log("SETVLAUE", obj);
-    yield call(updateDb, id.id, obj);
-    window.location.reload();
-    yield call(getData);
-    // yield put({ type: UPDATE_DATA_SUCCESS, singleValue });
+    // let obj = {};
+    // setValue(id.data, obj);
+    // console.log("SETVLAUE", obj);
+     yield call(updateDb,  obj);
+    // window.location.reload();
+     yield call(getData);
+     yield put({ type: UPDATE_DATA_SUCCESS });
   } catch (error) {
     const err = error.message;
     yield put({ type: UPDATE_DATA_ERROR, err });

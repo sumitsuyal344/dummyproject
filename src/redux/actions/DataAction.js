@@ -27,12 +27,11 @@ export const deleteData = (id) => {
   };
 };
 
-export const updateData = (id, data) => {
-  console.log("updateData", id, data);
+export const updateData = (obj) => {
+  // console.log("updateData",obj);
   return {
     type: UPDATE_DATA_REQUEST,
-    id,
-    data,
+   obj
   };
 };
 
