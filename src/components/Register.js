@@ -54,7 +54,7 @@ const handleRegister=()=>{
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput  minlength="8" required label='Password' id='form3' type='password' name='password' onChange={handleChange}/>
+                <MDBInput  minLength="8" required label='Password' id='form3' type='password' name='password' onChange={handleChange}/>
               </div>
 
               {/* <div className="d-flex flex-row align-items-center mb-4">
